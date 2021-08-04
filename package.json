@@ -1,0 +1,23 @@
+{
+  "name": "table_back",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "budko_ilya",
+  "license": "MIT",
+  "scripts": {
+    "start": "babel-node index.js",
+    "dev": "nodemon --exec babel-node index.js -L",
+    "super": "supervisor --exec babel-node index.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@babel/node": "^7.14.9",
+    "@babel/preset-env": "^7.14.9",
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.7.1"
+  }
+}
