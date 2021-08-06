@@ -1,4 +1,6 @@
 import * as UserService from "../services/user.service";
+import { NotFoundError } from "../repositories/user.repository";
+
 class UserController {
   async createLine(req, res) {
     try {
@@ -23,7 +25,7 @@ class UserController {
       const line = await UserService.updateLine(id, name, value);
       res.json(line);
     } catch (err) {
-      if (err instanceof Error) {
+      if (err instanceof NotFoundError) {
         res.status(404).send({ error: { ...err, message: err.message } });
       } else {
         res.status(500).send(err)
@@ -36,7 +38,7 @@ class UserController {
       const lineId = await UserService.deleteLine(id);
       res.json(lineId);
     } catch (err) {
-      if (err instanceof Error) {
+      if (err instanceof NotFoundError) {
         res.status(404).send({ error: { ...err, message: err.message } });
       } else {
         res.status(500).send(err)

@@ -1,5 +1,4 @@
 import * as UserRepository from "../repositories/user.repository";
-import { NotFoundError } from "../repositories/user.repository";
 
 export const getLines = async () => {
   try {
