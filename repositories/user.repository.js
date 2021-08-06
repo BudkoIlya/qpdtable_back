@@ -9,7 +9,6 @@ export class NotFoundError extends Error {
 
 const CheckExistence = async (id) => {
   const line = await db.query("SELECT * FROM line where id = $1", [id]);
-  console.log("isExist", line.rows);
   return line.rows.length > 0;
 };
 

@@ -8,7 +8,7 @@ class UserController {
       const newLine = await UserService.createLine(name, value);
       res.json(newLine);
     } catch (err) {
-      res.status(500).send(err)
+      res.status(500).send(err);
     }
   }
   async getLines(req, res) {
@@ -16,7 +16,7 @@ class UserController {
       const lines = await UserService.getLines();
       res.json(lines.rows);
     } catch (err) {
-      res.status(500).send(err)
+      res.status(500).send(err);
     }
   }
   async updateLine(req, res) {
@@ -28,7 +28,7 @@ class UserController {
       if (err instanceof NotFoundError) {
         res.status(404).send({ error: { ...err, message: err.message } });
       } else {
-        res.status(500).send(err)
+        res.status(500).send(err);
       }
     }
   }
@@ -41,7 +41,7 @@ class UserController {
       if (err instanceof NotFoundError) {
         res.status(404).send({ error: { ...err, message: err.message } });
       } else {
-        res.status(500).send(err)
+        res.status(500).send(err);
       }
     }
   }

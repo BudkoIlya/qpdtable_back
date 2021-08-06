@@ -3,7 +3,9 @@ import * as UserRepository from "../repositories/user.repository";
 export const getLines = async () => {
   try {
     return await UserRepository.getLine();
-  } catch (err) {}
+  } catch (err) {
+    throw err;
+  }
 };
 export const deleteLine = async (id) => {
   try {
